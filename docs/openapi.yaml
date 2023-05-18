@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: http-async-publisher
+  description: This application parses a HTTP Request and publish it to a Pub/Sub topic
+  version: 0.0.1
+
+paths:
+  /pubsub/:topic:
+    summary: Publishes a message on the topic
+    post:
+      summary: Publishes a message on the topic
+      description: Publishes a message on the topic
+      operationId: post-topic
+      requestBody:
+        description: Message body to be enqueued on topic, can be anything
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        "202":
+          description: Meessage was received
+          content:
+            application/json:
+              examples:
+                Success:
+                  value: '"enqueued"'
+        "500":
+          description: Something went wrong
+          content:
+            text/plain; charset=utf-8:
+              examples:
+                Error:
+                  value: '"error description"'
+      tags:
+        - pubsub
+tags:
+  - name: pubsub
