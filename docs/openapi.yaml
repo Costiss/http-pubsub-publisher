@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: http-async-publisher
+  title: http-pubsub-publisher
   description: This application parses a HTTP Request and publish it to a Pub/Sub topic
   version: 0.0.1
 

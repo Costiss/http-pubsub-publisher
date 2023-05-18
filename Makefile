@@ -1,9 +1,9 @@
 build:
-	export DOCKER_BUILDKIT=1 && docker build --network host -t http-async-publisher .
+	export DOCKER_BUILDKIT=1 && docker build --network host -t http-pubsub-publisher .
 
 up: build
-	docker run -it --name http-async-publisher --rm --network host -p "8080:8080" http-async-publisher
+	docker run -it --name http-pubsub-publisher --rm --network host -p "8080:8080" http-pubsub-publisher
 
 clean:
-	docker rm -f http-async-publisher
-	docker rmi http-async-publisher
+	docker rm -f http-pubsub-publisher
+	docker rmi http-pubsub-publisher
